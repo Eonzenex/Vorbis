@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using NAudio.Core.Wave.WaveFormats;
+using NAudio.Core.Wave.WaveOutputs;
 
 namespace NAudio.Vorbis
 {
-    public class VorbisWaveReader : Wave.WaveStream, Wave.ISampleProvider
+    public class VorbisWaveReader : Wave.WaveStream, ISampleProvider
     {
         VorbisSampleProvider _sampleProvider;
 
@@ -30,7 +32,7 @@ namespace NAudio.Vorbis
             base.Dispose(disposing);
         }
 
-        public override Wave.WaveFormat WaveFormat => _sampleProvider.WaveFormat;
+        public override WaveFormat WaveFormat => _sampleProvider.WaveFormat;
 
         public override long Length => _sampleProvider.Length * _sampleProvider.WaveFormat.BlockAlign;
 

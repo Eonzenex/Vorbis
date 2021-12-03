@@ -2,6 +2,8 @@
 using NVorbis.Contracts;
 using System;
 using System.Collections.Generic;
+using NAudio.Core.Wave.WaveFormats;
+using NAudio.Core.Wave.WaveOutputs;
 
 namespace NAudio.Vorbis
 {
